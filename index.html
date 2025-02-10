@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facts About Things I Love</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        #factButton {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #factButton:hover {
+            background-color: #0056b3;
+        }
+
+        #factDisplay {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Facts About Things I Love</h1>
+        <button id="factButton">Generate Fact</button>
+        <p id="factDisplay">Click the button to get a fact!</p>
+    </div>
+
+    <script>
+        const factButton = document.getElementById('factButton');
+        const factDisplay = document.getElementById('factDisplay');
+
+        const facts = {
+            "myFacts": [
+                { "fact": "I love coding because it's like solving puzzles." },
+                { "fact": "I enjoy spending time in nature, especially hiking." },
+                { "fact": "I'm passionate about learning new things every day." },
+                { "fact": "I find joy in helping others." },
+                { "fact": "I appreciate the beauty of art and music." }
+            ]
+        };
+
+        factButton.addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * facts.myFacts.length);
+            factDisplay.textContent = facts.myFacts[randomIndex].fact;
+        });
+    </script>
+</body>
+</html>
